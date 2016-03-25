@@ -4,20 +4,12 @@ body
   font-family: sans-serif
   background-color: #222
 
-// controls the direction of cube rotation
-@-webkit-keyframes rotate
-  0%
-    -webkit-transform: rotateY(0)
-  100%
-    -webkit-transform: rotateY(360deg)
-
-// cube dimension length
-$side-length: 250px
-
 .banner
   height: 90vh
-  padding-top: 50px
-  text-align: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
 
   .name
     font-size: 2.5em
@@ -26,41 +18,6 @@ $side-length: 250px
   .desc
     font-size: 1em
     color: #b4b4b4
-
-  .stage
-    height: $side-length
-    width: $side-length
-    margin: auto
-    margin-top: 60px
-    margin-bottom: 100px
-
-    -webkit-perspective: 1600px
-    -webkit-perspective-origin: 50% -250px
-
-    .cube
-      -webkit-transform-style: preserve-3d
-      -webkit-animation: rotate 5s infinite linear
-
-      figure
-        height: $side-length
-        width: $side-length
-        border: 2px solid white
-
-        position: absolute
-
-      // unique transformations for each face of the cube
-      .front
-        -webkit-transform: translateZ($side-length / 2)
-      .back
-        -webkit-transform: rotateY(180deg) translateZ($side-length / 2)
-      .top
-        -webkit-transform: rotateX(90deg) translateZ($side-length / 2)
-      .bottom
-        -webkit-transform: rotateX(-90deg) translateZ($side-length / 2)
-      .left
-        -webkit-transform: rotateY(-90deg) translateZ($side-length / 2)
-      .right
-        -webkit-transform: rotateY(90deg) translateZ($side-length / 2)
 
   .banner-btn
     margin-top: 50px
